@@ -29,6 +29,7 @@
                         const li = document.createElement('li'); // Mover esto aquí
                         li.innerHTML = `
                             <p><strong>${digimon.name}</strong> - Nivel: ${digimon.level}</p>
+                            <img src="${digimon.img}" alt="${digimon.name}" width"100">
                         `;
                         digimonList.appendChild(li);
                     });
@@ -36,7 +37,8 @@
                     document.getElementById('loading').style.display = 'none'; // Opcional: ocultar loading
                 })
                 .catch(error => {
-
+                    console.error('Error: ' , error);
+                    document.getElementById('loading').style.display = 'none'; 
                 });
         });
     </script>
